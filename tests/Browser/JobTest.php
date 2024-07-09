@@ -40,7 +40,7 @@ class JobTest extends DuskTestCase {
                 ->click('button[type="submit"]')
                 ->pause(2000)
                 ->visit('/jobs/create')
-                ->type('title', 'Test Company')
+                ->type('title', $company)
                 ->type('salary', fake()->numberBetween(100,20000))
                 ->click('button[type="submit"]')
                 ->pause(2000)

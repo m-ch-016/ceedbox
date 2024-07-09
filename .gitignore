@@ -7,6 +7,8 @@
 storage/debugbar
 /vendor
 .env
+database/database.sqlite
+database/dusk.sqlite
 .env.dusk.local
 .phpunit.result.cache
 Homestead.json
