@@ -12,7 +12,7 @@ class JobTest extends DuskTestCase {
         $this->browse(function (Browser $browser) {
             $browser->maximize();
             $browser->visit('/jobs')
-                ->assertSee('.job');
+                ->assertSee('pays');
         });
     }
 
