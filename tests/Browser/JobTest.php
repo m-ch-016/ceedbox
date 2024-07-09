@@ -7,7 +7,7 @@ use Tests\DuskTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class JobTest extends DuskTestCase {
-    public function see_jobs()
+    public function test_see_jobs()
     {
         $this->browse(function (Browser $browser) {
             $browser->maximize();
@@ -16,7 +16,7 @@ class JobTest extends DuskTestCase {
         });
     }
 
-    public function see_job_details()
+    public function test_see_job_details()
     {
         $this->browse(function (Browser $browser){
             $browser->maximize();
