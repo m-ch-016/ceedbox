@@ -35,18 +35,15 @@ class JobTest extends DuskTestCase {
         $this->browse(function (Browser $browser) use ($company){
             $browser->maximize();
             $browser->visit('/login')
-                ->type('email', 'john.doe@example.com')
-                ->type('password', 'password123')
+                ->type('email', 'John.Appleseed@example.com')
+                ->type('password', 'password1234')
                 ->click('button[type="submit"]')
-                ->pause(2000)
                 ->visit('/jobs/create')
                 ->type('title', $company)
                 ->type('salary', fake()->numberBetween(100,20000))
-                ->click('button[type="submit"]')
-                ->pause(2000)
+                ->click('.save-job')
                 ->visit('/jobs')
-                ->pause(2000)
-                ->assertSee($company);
+                ->waitForText($company, 100000);
         });
     }
 
