@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Employer;
 use Illuminate\Support\Facades\Auth;
 
 class RegisteredUserController extends Controller
@@ -22,7 +23,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create($attrs);
-
+        Employer::create(['name'=>$user->name, 'user_id'=>$user->id]);
         Auth::login($user);
 
         return redirect('/jobs');

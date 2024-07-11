@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    @vite(['resources/js/app.js','resources/css/app.css'])
+    {{-- @vite(['resources/js/app.js','resources/css/app.css']) --}}
 </head>
 
 <body class='h-full'>
@@ -45,7 +45,7 @@
                             @auth
                                 <form action="/logout" method="POST">
                                     @csrf
-                                    <x-form-button>Logout</x-form-button>
+                                    <x-form-button class="logout-button">Logout</x-form-button>
                                 </form>
                             @endauth
 

@@ -7,8 +7,9 @@
 storage/debugbar
 /vendor
 .env
-.env.backup
-.env.production
+database/database.sqlite
+database/dusk.sqlite
+.env.dusk.local
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -18,3 +19,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+.
