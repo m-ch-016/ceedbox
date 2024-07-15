@@ -6,7 +6,8 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Jobs\TranslateJob;
 use App\Models\Job;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
+
 
 
 Route::get('/test', function() {
@@ -39,3 +40,10 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
+
+Route::get('/trigger-make-scenario', function(){
+    Artisan::call('app:trigger-make-scenario');
+
+    return redirect()->back()->with('success', 'Triggered Make.com scenario successfully!');
+
+})->name('trigger.make.scenario');
