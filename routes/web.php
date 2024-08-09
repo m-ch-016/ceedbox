@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Artisan;
 
 
 Route::get('/test', function() {
+    dd('hi');
     $job = Job::first();
 
     TranslateJob::dispatch($job);
